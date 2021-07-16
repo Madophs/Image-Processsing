@@ -8,7 +8,7 @@ def sobelFilterKernelRoutine(img_input, img_output, kernel_x, kernel_y, center=F
 
 
 def sobelFilter(img):
-    res_dir = os.environ["PY_IMG"]
+    res_dir = os.environ['PY_IMG']
     if res_dir is None:
         raise Exception("[WARN] PY_IMG is undefined.")
 
@@ -65,7 +65,9 @@ def sobelFilter(img):
 
 
 if __name__ == "__main__":
-    sobelFilter("transit1.jpg")
-    sobelFilter("house.jpg")
-    sobelFilter("rombo_romboide.png")
-
+    try:
+        sobelFilter("transit1.jpg")
+        sobelFilter("house.jpg")
+        sobelFilter("rombo_romboide.png")
+    except Exception as e:
+        print("Exception", str(e))
